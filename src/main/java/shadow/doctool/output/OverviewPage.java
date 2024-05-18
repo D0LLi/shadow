@@ -104,12 +104,16 @@ public class OverviewPage extends Page {
 
     if (linkablePackages.contains(pkg))
       if (pkg.getQualifiedName().isEmpty())
-        writeLink(PackagePage.PAGE_NAME + EXTENSION, "default", out);
+        {
+            writeLink(PackagePage.PAGE_NAME + EXTENSION, "default", out);
+        }
       else
-        writeLink(
+        {
+            writeLink(
             pkg.getQualifiedName().replaceAll(":", "/") + "/" + PackagePage.PAGE_NAME + EXTENSION,
             packageName,
             out);
+        }
     else out.add(packageName);
   }
 

@@ -434,7 +434,9 @@ public abstract class BaseChecker extends ShadowVisitorErrorReporter {
 
       Map<String, ImportInformation> imports = outer.getImportedItems();
       ImportInformation information = imports.get(name);
-      if (information != null) return information.getType();
+      if (information != null) {
+          return information.getType();
+      }
     }
 
     return null;
@@ -457,7 +459,9 @@ public abstract class BaseChecker extends ShadowVisitorErrorReporter {
       int colon = name.indexOf(':');
       Type outer = lookupType(ctx, name.substring(0, colon));
       if (outer != null) return outer.getInnerType(name.substring(colon + 1));
-      else return null;
+      else {
+          return null;
+      }
     } else return lookupTypeStartingAt(ctx, name, declarationType);
   }
 
