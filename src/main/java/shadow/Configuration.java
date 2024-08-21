@@ -605,7 +605,9 @@ public class Configuration {
 
     final String SDK_KEY;
     if (x86Windows) // Unlikely with modern Windows
-    SDK_KEY = "SOFTWARE\\Microsoft\\Microsoft SDKs\\Windows\\";
+    {
+        SDK_KEY = "SOFTWARE\\Microsoft\\Microsoft SDKs\\Windows\\";
+    }
     else SDK_KEY = "SOFTWARE\\WOW6432Node\\Microsoft\\Microsoft SDKs\\Windows\\";
 
     // First, try to find Windows SDK path in the registry

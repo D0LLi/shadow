@@ -1418,7 +1418,9 @@ public class StatementChecker extends ScopedChecker {
       // for convenience, all numerical types should be castable
       ctx.setType(t1);
     else if (t1.isSubtype(t2) || t2.isSubtype(t1) || t1 instanceof InterfaceType || t2 instanceof  InterfaceType)
-      ctx.setType(t1);
+      {
+          ctx.setType(t1);
+      }
     else {
       addError(
           ctx,
@@ -2997,7 +2999,9 @@ public class StatementChecker extends ScopedChecker {
     visitChildren(ctx);
 
     if (currentMethod.isEmpty()) // Should never happen
-    addError(ctx, Error.INVALID_STRUCTURE, "Return statement cannot be outside of method body");
+    {
+        addError(ctx, Error.INVALID_STRUCTURE, "Return statement cannot be outside of method body");
+    }
     else {
       MethodType methodType = (MethodType) (currentMethod.getFirst().getType());
       ctx.setType(
