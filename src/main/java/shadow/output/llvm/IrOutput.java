@@ -181,7 +181,9 @@ public class IrOutput extends AbstractOutput {
         sb.append(methodTableType(type));
 
         if (type.isPrimitive()) // put wrapped value in for primitives
-        sb.append(", ").append(type(type));
+        {
+            sb.append(", ").append(type(type));
+        }
         else {
           for (Entry<String, ? extends ModifiedType> field : ((ClassType) type).orderAllFields())
             sb.append(", ").append(type(field.getValue()));

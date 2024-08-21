@@ -250,7 +250,9 @@ public class InterfaceType extends Type {
 
     // type name
     if (!hasOuter()) // outermost interface ...are inner interfaces even allowed?
-    out.print(toString(PACKAGES | TYPE_PARAMETERS | PARAMETER_BOUNDS));
+    {
+        out.print(toString(PACKAGES | TYPE_PARAMETERS | PARAMETER_BOUNDS));
+    }
     else {
       String name = toString(TYPE_PARAMETERS | PARAMETER_BOUNDS);
       out.print(name.substring(name.lastIndexOf(':') + 1));
