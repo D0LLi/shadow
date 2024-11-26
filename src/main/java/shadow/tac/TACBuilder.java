@@ -962,7 +962,9 @@ public class TACBuilder extends ShadowBaseVisitor<Void> {
     visitChildren(ctx);
     TACLabel recover;
     if (block.hasRecover()) // Direct recover only
-    recover = block.getRecover();
+    {
+        recover = block.getRecover();
+    }
     else recover = new TACLabel(method);
 
     TACLabel continueLabel = new TACLabel(method);
@@ -1737,7 +1739,9 @@ public class TACBuilder extends ShadowBaseVisitor<Void> {
 
             boolean moreConditions;
             if (j < label.primaryExpression().size() - 1) // more conditions in this label
-            moreConditions = true;
+            {
+                moreConditions = true;
+            }
             else // one more label which isn't default
             if (i
                 < ctx.switchLabel().size()
